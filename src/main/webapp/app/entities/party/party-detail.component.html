@@ -1,0 +1,51 @@
+
+<div *ngIf="party">
+    <h2><span jhiTranslate="skeletonApp.party.detail.title">Party</span> {{party.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="skeletonApp.party.creationDate">Creation Date</span></dt>
+        <dd>
+            <span>{{party.creationDate | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.party.partyname">Partyname</span></dt>
+        <dd>
+            <span>{{party.partyname}}</span>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.party.partydescription">Partydescription</span></dt>
+        <dd>
+            <span>{{party.partydescription}}</span>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.party.image">Image</span></dt>
+        <dd>
+            <div *ngIf="party.image">
+                <a (click)="openFile(party.imageContentType, party.image)">
+                    <img [src]="'data:' + party.imageContentType + ';base64,' + party.image" style="max-width: 100%;" alt="party image"/>
+                </a>
+                {{party.imageContentType}}, {{byteSize(party.image)}}
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.party.isActive">Is Active</span></dt>
+        <dd>
+            <span>{{party.isActive}}</span>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.party.user">User</span></dt>
+        <dd>
+            {{party.user?.id}}
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'party/'+ party.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,111 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "usefulLinks1",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "usefulLinks1"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "usefulLinks2",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "usefulLinks2"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "usefulLinks3",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "usefulLinks3"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "usefulLinks4",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "usefulLinks4"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "usefulLinks5",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "usefulLinks5"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "usefulLinks6",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "usefulLinks6"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "recentVideos1",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "recentVideos1"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "recentVideos2",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "recentVideos2"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "recentVideos3",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "recentVideos3"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "recentVideos4",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "recentVideos4"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "recentVideos5",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "recentVideos5"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "recentVideos6",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "recentVideos6"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "linkText",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "linkURL",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20180620105312",
+    "entityTableName": "urllink",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

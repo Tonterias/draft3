@@ -1,0 +1,32 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "topic",
+            "relationshipName": "post",
+            "otherEntityName": "post",
+            "otherEntityField": "headline",
+            "ownerSide": true
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "topicName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength",
+                "required"
+            ],
+            "fieldValidateRulesMinlength": 2,
+            "fieldValidateRulesMaxlength": 40
+        }
+    ],
+    "changelogDate": "20180620105303",
+    "entityTableName": "topic",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

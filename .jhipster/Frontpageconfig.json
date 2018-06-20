@@ -1,0 +1,460 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "topNews1",
+            "otherEntityName": "post",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "topNews1(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "topNews2",
+            "otherEntityName": "post",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "topNews2(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "topNews3",
+            "otherEntityName": "post",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "topNews3(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "topNews4",
+            "otherEntityName": "post",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "topNews4(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "topNews5",
+            "otherEntityName": "post",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "topNews5(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "latestNews1",
+            "otherEntityName": "post",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "latestNews1(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "latestNews2",
+            "otherEntityName": "post",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "latestNews2(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "latestNews3",
+            "otherEntityName": "post",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "latestNews3(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "latestNews4",
+            "otherEntityName": "post",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "latestNews4(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "latestNews5",
+            "otherEntityName": "post",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "latestNews5(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "breakingNews1",
+            "otherEntityName": "post",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "breakingNews1(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "recentPosts1",
+            "otherEntityName": "post",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "recentPosts1(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "recentPosts2",
+            "otherEntityName": "post",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "recentPosts2(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "recentPosts3",
+            "otherEntityName": "post",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "recentPosts3(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "recentPosts4",
+            "otherEntityName": "post",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "recentPosts4(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "featuredArticles1",
+            "otherEntityName": "post",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "featuredArticles1(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "featuredArticles2",
+            "otherEntityName": "post",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "featuredArticles2(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "featuredArticles3",
+            "otherEntityName": "post",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "featuredArticles3(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "featuredArticles4",
+            "otherEntityName": "post",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "featuredArticles4(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "featuredArticles5",
+            "otherEntityName": "post",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "featuredArticles5(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "featuredArticles6",
+            "otherEntityName": "post",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "featuredArticles6(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "featuredArticles7",
+            "otherEntityName": "post",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "featuredArticles7(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "featuredArticles8",
+            "otherEntityName": "post",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "featuredArticles8(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "featuredArticles9",
+            "otherEntityName": "post",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "featuredArticles9(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "featuredArticles10",
+            "otherEntityName": "post",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "featuredArticles10(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "popularNews1",
+            "otherEntityName": "post",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "popularNews1(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "popularNews2",
+            "otherEntityName": "post",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "popularNews2(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "popularNews3",
+            "otherEntityName": "post",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "popularNews3(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "popularNews4",
+            "otherEntityName": "post",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "popularNews4(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "popularNews5",
+            "otherEntityName": "post",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "popularNews5(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "popularNews6",
+            "otherEntityName": "post",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "popularNews6(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "popularNews7",
+            "otherEntityName": "post",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "popularNews7(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "popularNews8",
+            "otherEntityName": "post",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "popularNews8(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "weeklyNews1",
+            "otherEntityName": "post",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "weeklyNews1(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "weeklyNews2",
+            "otherEntityName": "post",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "weeklyNews2(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "weeklyNews3",
+            "otherEntityName": "post",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "weeklyNews3(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "weeklyNews4",
+            "otherEntityName": "post",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "weeklyNews4(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "newsFeeds1",
+            "otherEntityName": "post",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "newsFeeds1(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "newsFeeds2",
+            "otherEntityName": "post",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "newsFeeds2(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "newsFeeds3",
+            "otherEntityName": "post",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "newsFeeds3(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "newsFeeds4",
+            "otherEntityName": "post",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "newsFeeds4(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "newsFeeds5",
+            "otherEntityName": "post",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "newsFeeds5(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "newsFeeds6",
+            "otherEntityName": "post",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "newsFeeds6(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "usefulLinks1",
+            "otherEntityName": "urllink",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "usefulLinks1(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "usefulLinks2",
+            "otherEntityName": "urllink",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "usefulLinks2(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "usefulLinks3",
+            "otherEntityName": "urllink",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "usefulLinks3(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "usefulLinks4",
+            "otherEntityName": "urllink",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "usefulLinks4(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "usefulLinks5",
+            "otherEntityName": "urllink",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "usefulLinks5(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "usefulLinks6",
+            "otherEntityName": "urllink",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "usefulLinks6(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "recentVideos1",
+            "otherEntityName": "urllink",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "recentVideos1(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "recentVideos2",
+            "otherEntityName": "urllink",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "recentVideos2(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "recentVideos3",
+            "otherEntityName": "urllink",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "recentVideos3(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "recentVideos4",
+            "otherEntityName": "urllink",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "recentVideos4(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "recentVideos5",
+            "otherEntityName": "urllink",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "recentVideos5(id)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "recentVideos6",
+            "otherEntityName": "urllink",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "recentVideos6(id)"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "creationDate",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20180620105256",
+    "entityTableName": "frontpageconfig",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

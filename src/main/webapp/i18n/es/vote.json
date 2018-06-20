@@ -1,0 +1,26 @@
+
+{
+    "skeletonApp": {
+        "vote" : {
+            "home": {
+                "title": "Votes",
+                "createLabel": "Crear nuevo Vote",
+                "createOrEditLabel": "Crear o editar Vote",
+                "search": "Search for Vote"
+            },
+            "created": "Un nuevo Vote ha sido creado con el identificador {{ param }}",
+            "updated": "Un Vote ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Vote ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Vote {{ id }}?"
+            },
+            "detail": {
+                "title": "Vote"
+            },
+            "creationDate": "Creation Date",
+            "numberOfPoints": "Number Of Points",
+            "user": "User",
+            "proposal": "Proposal"
+        }
+    }
+}

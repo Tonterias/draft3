@@ -1,0 +1,118 @@
+<div>
+    <h2>
+        <span jhiTranslate="skeletonApp.profile.home.title">Profiles</span>
+        <button class="btn btn-primary float-right jh-create-entity create-profile" [routerLink]="['/', { outlets: { popup: ['profile-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span class="hidden-sm-down"  jhiTranslate="skeletonApp.profile.home.createLabel">
+            Create new Profile
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'skeletonApp.profile.home.search' | translate }}">
+                    <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+                        <span class="fa fa-search"></span>
+                    </button>
+                    <button class="input-group-append btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <span class="fa fa-trash-o"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="profiles">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="reset.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="creationDate"><span jhiTranslate="skeletonApp.profile.creationDate">Creation Date</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="image"><span jhiTranslate="skeletonApp.profile.image">Image</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="gender"><span jhiTranslate="skeletonApp.profile.gender">Gender</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="phone"><span jhiTranslate="skeletonApp.profile.phone">Phone</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="bio"><span jhiTranslate="skeletonApp.profile.bio">Bio</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="birthdate"><span jhiTranslate="skeletonApp.profile.birthdate">Birthdate</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="civilStatus"><span jhiTranslate="skeletonApp.profile.civilStatus">Civil Status</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="lookingFor"><span jhiTranslate="skeletonApp.profile.lookingFor">Looking For</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="purpose"><span jhiTranslate="skeletonApp.profile.purpose">Purpose</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="physical"><span jhiTranslate="skeletonApp.profile.physical">Physical</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="religion"><span jhiTranslate="skeletonApp.profile.religion">Religion</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="ethnicGroup"><span jhiTranslate="skeletonApp.profile.ethnicGroup">Ethnic Group</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="studies"><span jhiTranslate="skeletonApp.profile.studies">Studies</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="sibblings"><span jhiTranslate="skeletonApp.profile.sibblings">Sibblings</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="eyes"><span jhiTranslate="skeletonApp.profile.eyes">Eyes</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="smoker"><span jhiTranslate="skeletonApp.profile.smoker">Smoker</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="children"><span jhiTranslate="skeletonApp.profile.children">Children</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="futureChildren"><span jhiTranslate="skeletonApp.profile.futureChildren">Future Children</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="pet"><span jhiTranslate="skeletonApp.profile.pet">Pet</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="userPoints"><span jhiTranslate="skeletonApp.profile.userPoints">User Points</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="user.id"><span jhiTranslate="skeletonApp.profile.user">User</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+            <tr *ngFor="let profile of profiles ;trackBy: trackId">
+                <td><a [routerLink]="['../profile', profile.id ]">{{profile.id}}</a></td>
+                <td>{{profile.creationDate | date:'medium'}}</td>
+                <td>
+                    <a *ngIf="profile.image" (click)="openFile(profile.imageContentType, profile.image)">
+                        <img [src]="'data:' + profile.imageContentType + ';base64,' + profile.image" style="max-height: 30px;" alt="profile image"/>
+                    </a>
+                    <span *ngIf="profile.image">{{profile.imageContentType}}, {{byteSize(profile.image)}}</span>
+                </td>
+                <td jhiTranslate="{{'skeletonApp.Gender.' + profile.gender}}">{{profile.gender}}</td>
+                <td>{{profile.phone}}</td>
+                <td>{{profile.bio}}</td>
+                <td>{{profile.birthdate | date:'medium'}}</td>
+                <td jhiTranslate="{{'skeletonApp.CivilStatus.' + profile.civilStatus}}">{{profile.civilStatus}}</td>
+                <td jhiTranslate="{{'skeletonApp.Gender.' + profile.lookingFor}}">{{profile.lookingFor}}</td>
+                <td jhiTranslate="{{'skeletonApp.Purpose.' + profile.purpose}}">{{profile.purpose}}</td>
+                <td jhiTranslate="{{'skeletonApp.Physical.' + profile.physical}}">{{profile.physical}}</td>
+                <td jhiTranslate="{{'skeletonApp.Religion.' + profile.religion}}">{{profile.religion}}</td>
+                <td jhiTranslate="{{'skeletonApp.EthnicGroup.' + profile.ethnicGroup}}">{{profile.ethnicGroup}}</td>
+                <td jhiTranslate="{{'skeletonApp.Studies.' + profile.studies}}">{{profile.studies}}</td>
+                <td>{{profile.sibblings}}</td>
+                <td jhiTranslate="{{'skeletonApp.Eyes.' + profile.eyes}}">{{profile.eyes}}</td>
+                <td jhiTranslate="{{'skeletonApp.Smoker.' + profile.smoker}}">{{profile.smoker}}</td>
+                <td jhiTranslate="{{'skeletonApp.Children.' + profile.children}}">{{profile.children}}</td>
+                <td jhiTranslate="{{'skeletonApp.FutureChildren.' + profile.futureChildren}}">{{profile.futureChildren}}</td>
+                <td>{{profile.pet}}</td>
+                <td>{{profile.userPoints}}</td>
+                <td>
+                    {{profile.user?.id}}
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../profile', profile.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'profile/'+ profile.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'profile/'+ profile.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

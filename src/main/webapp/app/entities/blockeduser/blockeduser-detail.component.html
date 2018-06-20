@@ -1,0 +1,38 @@
+
+<div *ngIf="blockeduser">
+    <h2><span jhiTranslate="skeletonApp.blockeduser.detail.title">Blockeduser</span> {{blockeduser.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="skeletonApp.blockeduser.creationDate">Creation Date</span></dt>
+        <dd>
+            <span>{{blockeduser.creationDate | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.blockeduser.blockinguser">Blockinguser</span></dt>
+        <dd>
+            <div *ngIf="blockeduser.blockinguser">
+                <a [routerLink]="['/party', blockeduser.blockinguser?.id]">{{blockeduser.blockinguser?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.blockeduser.blockeduser">Blockeduser</span></dt>
+        <dd>
+            <div *ngIf="blockeduser.blockeduser">
+                <a [routerLink]="['/party', blockeduser.blockeduser?.id]">{{blockeduser.blockeduser?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'blockeduser/'+ blockeduser.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,73 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myVoteLabel" jhiTranslate="skeletonApp.vote.home.createOrEditLabel">Create or edit a Vote</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!vote.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="vote.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.vote.creationDate" for="field_creationDate">Creation Date</label>
+            <div class="d-flex">
+                <input id="field_creationDate" type="datetime-local" class="form-control" name="creationDate" [(ngModel)]="vote.creationDate"
+                required/>
+            </div>
+            <div [hidden]="!(editForm.controls.creationDate?.dirty && editForm.controls.creationDate?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.creationDate?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.creationDate?.errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.vote.numberOfPoints" for="field_numberOfPoints">Number Of Points</label>
+            <input type="number" class="form-control" name="numberOfPoints" id="field_numberOfPoints"
+                [(ngModel)]="vote.numberOfPoints" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.vote.user" for="field_user">User</label>
+            <select class="form-control" id="field_user" name="user" [(ngModel)]="vote.user"  required>
+                <option *ngIf="!editForm.value.user" [ngValue]="null" selected></option>
+                <option [ngValue]="userOption.id === vote.user?.id ? vote.user : userOption" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.id}}</option>
+            </select>
+        </div>
+        <div [hidden]="!(editForm.controls.user?.dirty && editForm.controls.user?.invalid)">
+            <small class="form-text text-danger"
+                [hidden]="!editForm.controls.user?.errors?.required" jhiTranslate="entity.validation.required">
+                This field is required.
+            </small>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.vote.proposal" for="field_proposal">Proposal</label>
+            <select class="form-control" id="field_proposal" name="proposal" [(ngModel)]="vote.proposal"  required>
+                <option *ngIf="!editForm.value.proposal" [ngValue]="null" selected></option>
+                <option [ngValue]="proposalOption.id === vote.proposal?.id ? vote.proposal : proposalOption" *ngFor="let proposalOption of proposals; trackBy: trackProposalById">{{proposalOption.id}}</option>
+            </select>
+        </div>
+        <div [hidden]="!(editForm.controls.proposal?.dirty && editForm.controls.proposal?.invalid)">
+            <small class="form-text text-danger"
+                [hidden]="!editForm.controls.proposal?.errors?.required" jhiTranslate="entity.validation.required">
+                This field is required.
+            </small>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

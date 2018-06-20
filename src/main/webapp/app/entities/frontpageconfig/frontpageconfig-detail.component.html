@@ -1,0 +1,356 @@
+
+<div *ngIf="frontpageconfig">
+    <h2><span jhiTranslate="skeletonApp.frontpageconfig.detail.title">Frontpageconfig</span> {{frontpageconfig.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.creationDate">Creation Date</span></dt>
+        <dd>
+            <span>{{frontpageconfig.creationDate | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.topNews1">Top News 1</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.topNews1">
+                <a [routerLink]="['/post', frontpageconfig.topNews1?.id]">{{frontpageconfig.topNews1?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.topNews2">Top News 2</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.topNews2">
+                <a [routerLink]="['/post', frontpageconfig.topNews2?.id]">{{frontpageconfig.topNews2?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.topNews3">Top News 3</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.topNews3">
+                <a [routerLink]="['/post', frontpageconfig.topNews3?.id]">{{frontpageconfig.topNews3?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.topNews4">Top News 4</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.topNews4">
+                <a [routerLink]="['/post', frontpageconfig.topNews4?.id]">{{frontpageconfig.topNews4?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.topNews5">Top News 5</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.topNews5">
+                <a [routerLink]="['/post', frontpageconfig.topNews5?.id]">{{frontpageconfig.topNews5?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.latestNews1">Latest News 1</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.latestNews1">
+                <a [routerLink]="['/post', frontpageconfig.latestNews1?.id]">{{frontpageconfig.latestNews1?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.latestNews2">Latest News 2</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.latestNews2">
+                <a [routerLink]="['/post', frontpageconfig.latestNews2?.id]">{{frontpageconfig.latestNews2?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.latestNews3">Latest News 3</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.latestNews3">
+                <a [routerLink]="['/post', frontpageconfig.latestNews3?.id]">{{frontpageconfig.latestNews3?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.latestNews4">Latest News 4</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.latestNews4">
+                <a [routerLink]="['/post', frontpageconfig.latestNews4?.id]">{{frontpageconfig.latestNews4?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.latestNews5">Latest News 5</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.latestNews5">
+                <a [routerLink]="['/post', frontpageconfig.latestNews5?.id]">{{frontpageconfig.latestNews5?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.breakingNews1">Breaking News 1</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.breakingNews1">
+                <a [routerLink]="['/post', frontpageconfig.breakingNews1?.id]">{{frontpageconfig.breakingNews1?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.recentPosts1">Recent Posts 1</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.recentPosts1">
+                <a [routerLink]="['/post', frontpageconfig.recentPosts1?.id]">{{frontpageconfig.recentPosts1?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.recentPosts2">Recent Posts 2</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.recentPosts2">
+                <a [routerLink]="['/post', frontpageconfig.recentPosts2?.id]">{{frontpageconfig.recentPosts2?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.recentPosts3">Recent Posts 3</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.recentPosts3">
+                <a [routerLink]="['/post', frontpageconfig.recentPosts3?.id]">{{frontpageconfig.recentPosts3?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.recentPosts4">Recent Posts 4</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.recentPosts4">
+                <a [routerLink]="['/post', frontpageconfig.recentPosts4?.id]">{{frontpageconfig.recentPosts4?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.featuredArticles1">Featured Articles 1</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.featuredArticles1">
+                <a [routerLink]="['/post', frontpageconfig.featuredArticles1?.id]">{{frontpageconfig.featuredArticles1?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.featuredArticles2">Featured Articles 2</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.featuredArticles2">
+                <a [routerLink]="['/post', frontpageconfig.featuredArticles2?.id]">{{frontpageconfig.featuredArticles2?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.featuredArticles3">Featured Articles 3</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.featuredArticles3">
+                <a [routerLink]="['/post', frontpageconfig.featuredArticles3?.id]">{{frontpageconfig.featuredArticles3?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.featuredArticles4">Featured Articles 4</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.featuredArticles4">
+                <a [routerLink]="['/post', frontpageconfig.featuredArticles4?.id]">{{frontpageconfig.featuredArticles4?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.featuredArticles5">Featured Articles 5</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.featuredArticles5">
+                <a [routerLink]="['/post', frontpageconfig.featuredArticles5?.id]">{{frontpageconfig.featuredArticles5?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.featuredArticles6">Featured Articles 6</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.featuredArticles6">
+                <a [routerLink]="['/post', frontpageconfig.featuredArticles6?.id]">{{frontpageconfig.featuredArticles6?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.featuredArticles7">Featured Articles 7</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.featuredArticles7">
+                <a [routerLink]="['/post', frontpageconfig.featuredArticles7?.id]">{{frontpageconfig.featuredArticles7?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.featuredArticles8">Featured Articles 8</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.featuredArticles8">
+                <a [routerLink]="['/post', frontpageconfig.featuredArticles8?.id]">{{frontpageconfig.featuredArticles8?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.featuredArticles9">Featured Articles 9</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.featuredArticles9">
+                <a [routerLink]="['/post', frontpageconfig.featuredArticles9?.id]">{{frontpageconfig.featuredArticles9?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.featuredArticles10">Featured Articles 10</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.featuredArticles10">
+                <a [routerLink]="['/post', frontpageconfig.featuredArticles10?.id]">{{frontpageconfig.featuredArticles10?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.popularNews1">Popular News 1</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.popularNews1">
+                <a [routerLink]="['/post', frontpageconfig.popularNews1?.id]">{{frontpageconfig.popularNews1?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.popularNews2">Popular News 2</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.popularNews2">
+                <a [routerLink]="['/post', frontpageconfig.popularNews2?.id]">{{frontpageconfig.popularNews2?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.popularNews3">Popular News 3</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.popularNews3">
+                <a [routerLink]="['/post', frontpageconfig.popularNews3?.id]">{{frontpageconfig.popularNews3?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.popularNews4">Popular News 4</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.popularNews4">
+                <a [routerLink]="['/post', frontpageconfig.popularNews4?.id]">{{frontpageconfig.popularNews4?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.popularNews5">Popular News 5</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.popularNews5">
+                <a [routerLink]="['/post', frontpageconfig.popularNews5?.id]">{{frontpageconfig.popularNews5?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.popularNews6">Popular News 6</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.popularNews6">
+                <a [routerLink]="['/post', frontpageconfig.popularNews6?.id]">{{frontpageconfig.popularNews6?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.popularNews7">Popular News 7</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.popularNews7">
+                <a [routerLink]="['/post', frontpageconfig.popularNews7?.id]">{{frontpageconfig.popularNews7?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.popularNews8">Popular News 8</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.popularNews8">
+                <a [routerLink]="['/post', frontpageconfig.popularNews8?.id]">{{frontpageconfig.popularNews8?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.weeklyNews1">Weekly News 1</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.weeklyNews1">
+                <a [routerLink]="['/post', frontpageconfig.weeklyNews1?.id]">{{frontpageconfig.weeklyNews1?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.weeklyNews2">Weekly News 2</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.weeklyNews2">
+                <a [routerLink]="['/post', frontpageconfig.weeklyNews2?.id]">{{frontpageconfig.weeklyNews2?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.weeklyNews3">Weekly News 3</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.weeklyNews3">
+                <a [routerLink]="['/post', frontpageconfig.weeklyNews3?.id]">{{frontpageconfig.weeklyNews3?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.weeklyNews4">Weekly News 4</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.weeklyNews4">
+                <a [routerLink]="['/post', frontpageconfig.weeklyNews4?.id]">{{frontpageconfig.weeklyNews4?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.newsFeeds1">News Feeds 1</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.newsFeeds1">
+                <a [routerLink]="['/post', frontpageconfig.newsFeeds1?.id]">{{frontpageconfig.newsFeeds1?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.newsFeeds2">News Feeds 2</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.newsFeeds2">
+                <a [routerLink]="['/post', frontpageconfig.newsFeeds2?.id]">{{frontpageconfig.newsFeeds2?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.newsFeeds3">News Feeds 3</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.newsFeeds3">
+                <a [routerLink]="['/post', frontpageconfig.newsFeeds3?.id]">{{frontpageconfig.newsFeeds3?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.newsFeeds4">News Feeds 4</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.newsFeeds4">
+                <a [routerLink]="['/post', frontpageconfig.newsFeeds4?.id]">{{frontpageconfig.newsFeeds4?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.newsFeeds5">News Feeds 5</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.newsFeeds5">
+                <a [routerLink]="['/post', frontpageconfig.newsFeeds5?.id]">{{frontpageconfig.newsFeeds5?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.newsFeeds6">News Feeds 6</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.newsFeeds6">
+                <a [routerLink]="['/post', frontpageconfig.newsFeeds6?.id]">{{frontpageconfig.newsFeeds6?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.usefulLinks1">Useful Links 1</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.usefulLinks1">
+                <a [routerLink]="['/urllink', frontpageconfig.usefulLinks1?.id]">{{frontpageconfig.usefulLinks1?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.usefulLinks2">Useful Links 2</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.usefulLinks2">
+                <a [routerLink]="['/urllink', frontpageconfig.usefulLinks2?.id]">{{frontpageconfig.usefulLinks2?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.usefulLinks3">Useful Links 3</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.usefulLinks3">
+                <a [routerLink]="['/urllink', frontpageconfig.usefulLinks3?.id]">{{frontpageconfig.usefulLinks3?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.usefulLinks4">Useful Links 4</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.usefulLinks4">
+                <a [routerLink]="['/urllink', frontpageconfig.usefulLinks4?.id]">{{frontpageconfig.usefulLinks4?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.usefulLinks5">Useful Links 5</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.usefulLinks5">
+                <a [routerLink]="['/urllink', frontpageconfig.usefulLinks5?.id]">{{frontpageconfig.usefulLinks5?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.usefulLinks6">Useful Links 6</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.usefulLinks6">
+                <a [routerLink]="['/urllink', frontpageconfig.usefulLinks6?.id]">{{frontpageconfig.usefulLinks6?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.recentVideos1">Recent Videos 1</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.recentVideos1">
+                <a [routerLink]="['/urllink', frontpageconfig.recentVideos1?.id]">{{frontpageconfig.recentVideos1?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.recentVideos2">Recent Videos 2</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.recentVideos2">
+                <a [routerLink]="['/urllink', frontpageconfig.recentVideos2?.id]">{{frontpageconfig.recentVideos2?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.recentVideos3">Recent Videos 3</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.recentVideos3">
+                <a [routerLink]="['/urllink', frontpageconfig.recentVideos3?.id]">{{frontpageconfig.recentVideos3?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.recentVideos4">Recent Videos 4</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.recentVideos4">
+                <a [routerLink]="['/urllink', frontpageconfig.recentVideos4?.id]">{{frontpageconfig.recentVideos4?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.recentVideos5">Recent Videos 5</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.recentVideos5">
+                <a [routerLink]="['/urllink', frontpageconfig.recentVideos5?.id]">{{frontpageconfig.recentVideos5?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.frontpageconfig.recentVideos6">Recent Videos 6</span></dt>
+        <dd>
+            <div *ngIf="frontpageconfig.recentVideos6">
+                <a [routerLink]="['/urllink', frontpageconfig.recentVideos6?.id]">{{frontpageconfig.recentVideos6?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'frontpageconfig/'+ frontpageconfig.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

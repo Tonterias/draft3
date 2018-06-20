@@ -1,0 +1,103 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myProposalLabel" jhiTranslate="skeletonApp.proposal.home.createOrEditLabel">Create or edit a Proposal</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!proposal.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="proposal.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.proposal.creationDate" for="field_creationDate">Creation Date</label>
+            <div class="d-flex">
+                <input id="field_creationDate" type="datetime-local" class="form-control" name="creationDate" [(ngModel)]="proposal.creationDate"
+                required/>
+            </div>
+            <div [hidden]="!(editForm.controls.creationDate?.dirty && editForm.controls.creationDate?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.creationDate?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.creationDate?.errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.proposal.releaseDate" for="field_releaseDate">Release Date</label>
+            <div class="d-flex">
+                <input id="field_releaseDate" type="datetime-local" class="form-control" name="releaseDate" [(ngModel)]="proposal.releaseDate"
+                />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.proposal.functionality" for="field_functionality">Functionality</label>
+            <input type="text" class="form-control" name="functionality" id="field_functionality"
+                [(ngModel)]="proposal.functionality" required minlength="2" maxlength="100"/>
+            <div [hidden]="!(editForm.controls.functionality?.dirty && editForm.controls.functionality?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.functionality?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.functionality?.errors?.minlength" jhiTranslate="entity.validation.minlength" translateValues="{ min: 2 }">
+                   This field is required to be at least 2 characters.
+                </small>
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.functionality?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 100 }">
+                   This field cannot be longer than 100 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.proposal.proposalType" for="field_proposalType">Proposal Type</label>
+            <select class="form-control" name="proposalType" [(ngModel)]="proposal.proposalType" id="field_proposalType" >
+                <option value="UNDER_STUDY">{{'skeletonApp.ProposalType.UNDER_STUDY' | translate}}</option>
+                <option value="APPROVED">{{'skeletonApp.ProposalType.APPROVED' | translate}}</option>
+                <option value="DEVELOPMENT">{{'skeletonApp.ProposalType.DEVELOPMENT' | translate}}</option>
+                <option value="PRODUCTION">{{'skeletonApp.ProposalType.PRODUCTION' | translate}}</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.proposal.party" for="field_party">Party</label>
+            <select class="form-control" id="field_party" name="party" [(ngModel)]="proposal.party"  required>
+                <option *ngIf="!editForm.value.party" [ngValue]="null" selected></option>
+                <option [ngValue]="partyOption.id === proposal.party?.id ? proposal.party : partyOption" *ngFor="let partyOption of parties; trackBy: trackPartyById">{{partyOption.id}}</option>
+            </select>
+        </div>
+        <div [hidden]="!(editForm.controls.party?.dirty && editForm.controls.party?.invalid)">
+            <small class="form-text text-danger"
+                [hidden]="!editForm.controls.party?.errors?.required" jhiTranslate="entity.validation.required">
+                This field is required.
+            </small>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.proposal.post" for="field_post">Post</label>
+            <select class="form-control" id="field_post" name="post" [(ngModel)]="proposal.post"  required>
+                <option *ngIf="!editForm.value.post" [ngValue]="null" selected></option>
+                <option [ngValue]="postOption.id === proposal.post?.id ? proposal.post : postOption" *ngFor="let postOption of posts; trackBy: trackPostById">{{postOption.id}}</option>
+            </select>
+        </div>
+        <div [hidden]="!(editForm.controls.post?.dirty && editForm.controls.post?.invalid)">
+            <small class="form-text text-danger"
+                [hidden]="!editForm.controls.post?.errors?.required" jhiTranslate="entity.validation.required">
+                This field is required.
+            </small>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

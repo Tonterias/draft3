@@ -1,0 +1,162 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myPostLabel" jhiTranslate="skeletonApp.post.home.createOrEditLabel">Create or edit a Post</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!post.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="post.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.post.creationDate" for="field_creationDate">Creation Date</label>
+            <div class="d-flex">
+                <input id="field_creationDate" type="datetime-local" class="form-control" name="creationDate" [(ngModel)]="post.creationDate"
+                required/>
+            </div>
+            <div [hidden]="!(editForm.controls.creationDate?.dirty && editForm.controls.creationDate?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.creationDate?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.creationDate?.errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.post.publicationDate" for="field_publicationDate">Publication Date</label>
+            <div class="d-flex">
+                <input id="field_publicationDate" type="datetime-local" class="form-control" name="publicationDate" [(ngModel)]="post.publicationDate"
+                />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.post.headline" for="field_headline">Headline</label>
+            <input type="text" class="form-control" name="headline" id="field_headline"
+                [(ngModel)]="post.headline" required minlength="2" maxlength="100"/>
+            <div [hidden]="!(editForm.controls.headline?.dirty && editForm.controls.headline?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.headline?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.headline?.errors?.minlength" jhiTranslate="entity.validation.minlength" translateValues="{ min: 2 }">
+                   This field is required to be at least 2 characters.
+                </small>
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.headline?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 100 }">
+                   This field cannot be longer than 100 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.post.lead" for="field_lead">Lead</label>
+            <input type="text" class="form-control" name="lead" id="field_lead"
+                [(ngModel)]="post.lead" minlength="2" maxlength="1000"/>
+            <div [hidden]="!(editForm.controls.lead?.dirty && editForm.controls.lead?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.lead?.errors?.minlength" jhiTranslate="entity.validation.minlength" translateValues="{ min: 2 }">
+                   This field is required to be at least 2 characters.
+                </small>
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.lead?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 1000 }">
+                   This field cannot be longer than 1000 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.post.bodytext" for="field_bodytext">Bodytext</label>
+            <textarea class="form-control" name="bodytext" id="field_bodytext"
+                [(ngModel)]="post.bodytext" required minbytes="3" maxbytes="50000"></textarea>
+            <div [hidden]="!(editForm.controls.bodytext?.dirty && editForm.controls.bodytext?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.bodytext?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.bodytext?.errors?.minbytes" jhiTranslate="entity.validation.minbytes" translateValues="{ min: 3 }">
+                    This field should be at least 3.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.bodytext?.errors?.maxbytes" jhiTranslate="entity.validation.maxbytes" translateValues="{ max: 50000 }">
+                    This field cannot be more than 50000.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.post.quote" for="field_quote">Quote</label>
+            <input type="text" class="form-control" name="quote" id="field_quote"
+                [(ngModel)]="post.quote" minlength="2" maxlength="1000"/>
+            <div [hidden]="!(editForm.controls.quote?.dirty && editForm.controls.quote?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.quote?.errors?.minlength" jhiTranslate="entity.validation.minlength" translateValues="{ min: 2 }">
+                   This field is required to be at least 2 characters.
+                </small>
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.quote?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 1000 }">
+                   This field cannot be longer than 1000 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.post.conclusion" for="field_conclusion">Conclusion</label>
+            <input type="text" class="form-control" name="conclusion" id="field_conclusion"
+                [(ngModel)]="post.conclusion" minlength="2" maxlength="2000"/>
+            <div [hidden]="!(editForm.controls.conclusion?.dirty && editForm.controls.conclusion?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.conclusion?.errors?.minlength" jhiTranslate="entity.validation.minlength" translateValues="{ min: 2 }">
+                   This field is required to be at least 2 characters.
+                </small>
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.conclusion?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 2000 }">
+                   This field cannot be longer than 2000 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.post.image" for="field_image">Image</label>
+            <div>
+                <img [src]="'data:' + post.imageContentType + ';base64,' + post.image" style="max-height: 100px;" *ngIf="post.image" alt="post image"/>
+                <div *ngIf="post.image" class="form-text text-danger clearfix">
+                    <span class="pull-left">{{post.imageContentType}}, {{byteSize(post.image)}}</span>
+                    <button type="button" (click)="clearInputImage('image', 'imageContentType', 'fileImage')" class="btn btn-secondary btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" id="file_image" (change)="setFileData($event, post, 'image', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+            </div>
+            <input type="hidden" class="form-control" name="image" id="field_image"
+                [(ngModel)]="post.image" />
+            <input type="hidden" class="form-control" name="imageContentType" id="field_imageContentType"
+                [(ngModel)]="post.imageContentType" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.post.blog" for="field_blog">Blog</label>
+            <select class="form-control" id="field_blog" name="blog" [(ngModel)]="post.blog"  required>
+                <option *ngIf="!editForm.value.blog" [ngValue]="null" selected></option>
+                <option [ngValue]="blogOption.id === post.blog?.id ? post.blog : blogOption" *ngFor="let blogOption of blogs; trackBy: trackBlogById">{{blogOption.title}}</option>
+            </select>
+        </div>
+        <div [hidden]="!(editForm.controls.blog?.dirty && editForm.controls.blog?.invalid)">
+            <small class="form-text text-danger"
+                [hidden]="!editForm.controls.blog?.errors?.required" jhiTranslate="entity.validation.required">
+                This field is required.
+            </small>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

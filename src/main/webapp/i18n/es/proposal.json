@@ -1,0 +1,29 @@
+
+{
+    "skeletonApp": {
+        "proposal" : {
+            "home": {
+                "title": "Proposals",
+                "createLabel": "Crear nuevo Proposal",
+                "createOrEditLabel": "Crear o editar Proposal",
+                "search": "Search for Proposal"
+            },
+            "created": "Un nuevo Proposal ha sido creado con el identificador {{ param }}",
+            "updated": "Un Proposal ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Proposal ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Proposal {{ id }}?"
+            },
+            "detail": {
+                "title": "Proposal"
+            },
+            "creationDate": "Creation Date",
+            "releaseDate": "Release Date",
+            "functionality": "Functionality",
+            "proposalType": "Proposal Type",
+            "party": "Party",
+            "post": "Post",
+            "vote": "Vote"
+        }
+    }
+}

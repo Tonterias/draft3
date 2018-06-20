@@ -1,0 +1,111 @@
+
+<div *ngIf="profile">
+    <h2><span jhiTranslate="skeletonApp.profile.detail.title">Profile</span> {{profile.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="skeletonApp.profile.creationDate">Creation Date</span></dt>
+        <dd>
+            <span>{{profile.creationDate | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.profile.image">Image</span></dt>
+        <dd>
+            <div *ngIf="profile.image">
+                <a (click)="openFile(profile.imageContentType, profile.image)">
+                    <img [src]="'data:' + profile.imageContentType + ';base64,' + profile.image" style="max-width: 100%;" alt="profile image"/>
+                </a>
+                {{profile.imageContentType}}, {{byteSize(profile.image)}}
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.profile.gender">Gender</span></dt>
+        <dd>
+            <span jhiTranslate="{{'skeletonApp.Gender.' + profile.gender}}">{{profile.gender}}</span>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.profile.phone">Phone</span></dt>
+        <dd>
+            <span>{{profile.phone}}</span>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.profile.bio">Bio</span></dt>
+        <dd>
+            <span>{{profile.bio}}</span>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.profile.birthdate">Birthdate</span></dt>
+        <dd>
+            <span>{{profile.birthdate | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.profile.civilStatus">Civil Status</span></dt>
+        <dd>
+            <span jhiTranslate="{{'skeletonApp.CivilStatus.' + profile.civilStatus}}">{{profile.civilStatus}}</span>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.profile.lookingFor">Looking For</span></dt>
+        <dd>
+            <span jhiTranslate="{{'skeletonApp.Gender.' + profile.lookingFor}}">{{profile.lookingFor}}</span>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.profile.purpose">Purpose</span></dt>
+        <dd>
+            <span jhiTranslate="{{'skeletonApp.Purpose.' + profile.purpose}}">{{profile.purpose}}</span>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.profile.physical">Physical</span></dt>
+        <dd>
+            <span jhiTranslate="{{'skeletonApp.Physical.' + profile.physical}}">{{profile.physical}}</span>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.profile.religion">Religion</span></dt>
+        <dd>
+            <span jhiTranslate="{{'skeletonApp.Religion.' + profile.religion}}">{{profile.religion}}</span>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.profile.ethnicGroup">Ethnic Group</span></dt>
+        <dd>
+            <span jhiTranslate="{{'skeletonApp.EthnicGroup.' + profile.ethnicGroup}}">{{profile.ethnicGroup}}</span>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.profile.studies">Studies</span></dt>
+        <dd>
+            <span jhiTranslate="{{'skeletonApp.Studies.' + profile.studies}}">{{profile.studies}}</span>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.profile.sibblings">Sibblings</span></dt>
+        <dd>
+            <span>{{profile.sibblings}}</span>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.profile.eyes">Eyes</span></dt>
+        <dd>
+            <span jhiTranslate="{{'skeletonApp.Eyes.' + profile.eyes}}">{{profile.eyes}}</span>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.profile.smoker">Smoker</span></dt>
+        <dd>
+            <span jhiTranslate="{{'skeletonApp.Smoker.' + profile.smoker}}">{{profile.smoker}}</span>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.profile.children">Children</span></dt>
+        <dd>
+            <span jhiTranslate="{{'skeletonApp.Children.' + profile.children}}">{{profile.children}}</span>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.profile.futureChildren">Future Children</span></dt>
+        <dd>
+            <span jhiTranslate="{{'skeletonApp.FutureChildren.' + profile.futureChildren}}">{{profile.futureChildren}}</span>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.profile.pet">Pet</span></dt>
+        <dd>
+            <span>{{profile.pet}}</span>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.profile.userPoints">User Points</span></dt>
+        <dd>
+            <span>{{profile.userPoints}}</span>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.profile.user">User</span></dt>
+        <dd>
+            {{profile.user?.id}}
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'profile/'+ profile.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

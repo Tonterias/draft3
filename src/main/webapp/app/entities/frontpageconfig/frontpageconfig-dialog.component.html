@@ -1,0 +1,427 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myFrontpageconfigLabel" jhiTranslate="skeletonApp.frontpageconfig.home.createOrEditLabel">Create or edit a Frontpageconfig</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!frontpageconfig.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="frontpageconfig.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.creationDate" for="field_creationDate">Creation Date</label>
+            <div class="d-flex">
+                <input id="field_creationDate" type="datetime-local" class="form-control" name="creationDate" [(ngModel)]="frontpageconfig.creationDate"
+                required/>
+            </div>
+            <div [hidden]="!(editForm.controls.creationDate?.dirty && editForm.controls.creationDate?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.creationDate?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.creationDate?.errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </small>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.topNews1" for="field_topNews1">Top News 1</label>
+            <select class="form-control" id="field_topNews1" name="topNews1" [(ngModel)]="frontpageconfig.topNews1">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="postOption.id === frontpageconfig.topNews1?.id ? frontpageconfig.topNews1 : postOption" *ngFor="let postOption of topnews1s; trackBy: trackPostById">{{postOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.topNews2" for="field_topNews2">Top News 2</label>
+            <select class="form-control" id="field_topNews2" name="topNews2" [(ngModel)]="frontpageconfig.topNews2">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="postOption.id === frontpageconfig.topNews2?.id ? frontpageconfig.topNews2 : postOption" *ngFor="let postOption of topnews2s; trackBy: trackPostById">{{postOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.topNews3" for="field_topNews3">Top News 3</label>
+            <select class="form-control" id="field_topNews3" name="topNews3" [(ngModel)]="frontpageconfig.topNews3">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="postOption.id === frontpageconfig.topNews3?.id ? frontpageconfig.topNews3 : postOption" *ngFor="let postOption of topnews3s; trackBy: trackPostById">{{postOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.topNews4" for="field_topNews4">Top News 4</label>
+            <select class="form-control" id="field_topNews4" name="topNews4" [(ngModel)]="frontpageconfig.topNews4">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="postOption.id === frontpageconfig.topNews4?.id ? frontpageconfig.topNews4 : postOption" *ngFor="let postOption of topnews4s; trackBy: trackPostById">{{postOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.topNews5" for="field_topNews5">Top News 5</label>
+            <select class="form-control" id="field_topNews5" name="topNews5" [(ngModel)]="frontpageconfig.topNews5">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="postOption.id === frontpageconfig.topNews5?.id ? frontpageconfig.topNews5 : postOption" *ngFor="let postOption of topnews5s; trackBy: trackPostById">{{postOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.latestNews1" for="field_latestNews1">Latest News 1</label>
+            <select class="form-control" id="field_latestNews1" name="latestNews1" [(ngModel)]="frontpageconfig.latestNews1">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="postOption.id === frontpageconfig.latestNews1?.id ? frontpageconfig.latestNews1 : postOption" *ngFor="let postOption of latestnews1s; trackBy: trackPostById">{{postOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.latestNews2" for="field_latestNews2">Latest News 2</label>
+            <select class="form-control" id="field_latestNews2" name="latestNews2" [(ngModel)]="frontpageconfig.latestNews2">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="postOption.id === frontpageconfig.latestNews2?.id ? frontpageconfig.latestNews2 : postOption" *ngFor="let postOption of latestnews2s; trackBy: trackPostById">{{postOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.latestNews3" for="field_latestNews3">Latest News 3</label>
+            <select class="form-control" id="field_latestNews3" name="latestNews3" [(ngModel)]="frontpageconfig.latestNews3">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="postOption.id === frontpageconfig.latestNews3?.id ? frontpageconfig.latestNews3 : postOption" *ngFor="let postOption of latestnews3s; trackBy: trackPostById">{{postOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.latestNews4" for="field_latestNews4">Latest News 4</label>
+            <select class="form-control" id="field_latestNews4" name="latestNews4" [(ngModel)]="frontpageconfig.latestNews4">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="postOption.id === frontpageconfig.latestNews4?.id ? frontpageconfig.latestNews4 : postOption" *ngFor="let postOption of latestnews4s; trackBy: trackPostById">{{postOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.latestNews5" for="field_latestNews5">Latest News 5</label>
+            <select class="form-control" id="field_latestNews5" name="latestNews5" [(ngModel)]="frontpageconfig.latestNews5">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="postOption.id === frontpageconfig.latestNews5?.id ? frontpageconfig.latestNews5 : postOption" *ngFor="let postOption of latestnews5s; trackBy: trackPostById">{{postOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.breakingNews1" for="field_breakingNews1">Breaking News 1</label>
+            <select class="form-control" id="field_breakingNews1" name="breakingNews1" [(ngModel)]="frontpageconfig.breakingNews1">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="postOption.id === frontpageconfig.breakingNews1?.id ? frontpageconfig.breakingNews1 : postOption" *ngFor="let postOption of breakingnews1s; trackBy: trackPostById">{{postOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.recentPosts1" for="field_recentPosts1">Recent Posts 1</label>
+            <select class="form-control" id="field_recentPosts1" name="recentPosts1" [(ngModel)]="frontpageconfig.recentPosts1">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="postOption.id === frontpageconfig.recentPosts1?.id ? frontpageconfig.recentPosts1 : postOption" *ngFor="let postOption of recentposts1s; trackBy: trackPostById">{{postOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.recentPosts2" for="field_recentPosts2">Recent Posts 2</label>
+            <select class="form-control" id="field_recentPosts2" name="recentPosts2" [(ngModel)]="frontpageconfig.recentPosts2">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="postOption.id === frontpageconfig.recentPosts2?.id ? frontpageconfig.recentPosts2 : postOption" *ngFor="let postOption of recentposts2s; trackBy: trackPostById">{{postOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.recentPosts3" for="field_recentPosts3">Recent Posts 3</label>
+            <select class="form-control" id="field_recentPosts3" name="recentPosts3" [(ngModel)]="frontpageconfig.recentPosts3">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="postOption.id === frontpageconfig.recentPosts3?.id ? frontpageconfig.recentPosts3 : postOption" *ngFor="let postOption of recentposts3s; trackBy: trackPostById">{{postOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.recentPosts4" for="field_recentPosts4">Recent Posts 4</label>
+            <select class="form-control" id="field_recentPosts4" name="recentPosts4" [(ngModel)]="frontpageconfig.recentPosts4">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="postOption.id === frontpageconfig.recentPosts4?.id ? frontpageconfig.recentPosts4 : postOption" *ngFor="let postOption of recentposts4s; trackBy: trackPostById">{{postOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.featuredArticles1" for="field_featuredArticles1">Featured Articles 1</label>
+            <select class="form-control" id="field_featuredArticles1" name="featuredArticles1" [(ngModel)]="frontpageconfig.featuredArticles1">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="postOption.id === frontpageconfig.featuredArticles1?.id ? frontpageconfig.featuredArticles1 : postOption" *ngFor="let postOption of featuredarticles1s; trackBy: trackPostById">{{postOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.featuredArticles2" for="field_featuredArticles2">Featured Articles 2</label>
+            <select class="form-control" id="field_featuredArticles2" name="featuredArticles2" [(ngModel)]="frontpageconfig.featuredArticles2">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="postOption.id === frontpageconfig.featuredArticles2?.id ? frontpageconfig.featuredArticles2 : postOption" *ngFor="let postOption of featuredarticles2s; trackBy: trackPostById">{{postOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.featuredArticles3" for="field_featuredArticles3">Featured Articles 3</label>
+            <select class="form-control" id="field_featuredArticles3" name="featuredArticles3" [(ngModel)]="frontpageconfig.featuredArticles3">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="postOption.id === frontpageconfig.featuredArticles3?.id ? frontpageconfig.featuredArticles3 : postOption" *ngFor="let postOption of featuredarticles3s; trackBy: trackPostById">{{postOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.featuredArticles4" for="field_featuredArticles4">Featured Articles 4</label>
+            <select class="form-control" id="field_featuredArticles4" name="featuredArticles4" [(ngModel)]="frontpageconfig.featuredArticles4">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="postOption.id === frontpageconfig.featuredArticles4?.id ? frontpageconfig.featuredArticles4 : postOption" *ngFor="let postOption of featuredarticles4s; trackBy: trackPostById">{{postOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.featuredArticles5" for="field_featuredArticles5">Featured Articles 5</label>
+            <select class="form-control" id="field_featuredArticles5" name="featuredArticles5" [(ngModel)]="frontpageconfig.featuredArticles5">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="postOption.id === frontpageconfig.featuredArticles5?.id ? frontpageconfig.featuredArticles5 : postOption" *ngFor="let postOption of featuredarticles5s; trackBy: trackPostById">{{postOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.featuredArticles6" for="field_featuredArticles6">Featured Articles 6</label>
+            <select class="form-control" id="field_featuredArticles6" name="featuredArticles6" [(ngModel)]="frontpageconfig.featuredArticles6">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="postOption.id === frontpageconfig.featuredArticles6?.id ? frontpageconfig.featuredArticles6 : postOption" *ngFor="let postOption of featuredarticles6s; trackBy: trackPostById">{{postOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.featuredArticles7" for="field_featuredArticles7">Featured Articles 7</label>
+            <select class="form-control" id="field_featuredArticles7" name="featuredArticles7" [(ngModel)]="frontpageconfig.featuredArticles7">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="postOption.id === frontpageconfig.featuredArticles7?.id ? frontpageconfig.featuredArticles7 : postOption" *ngFor="let postOption of featuredarticles7s; trackBy: trackPostById">{{postOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.featuredArticles8" for="field_featuredArticles8">Featured Articles 8</label>
+            <select class="form-control" id="field_featuredArticles8" name="featuredArticles8" [(ngModel)]="frontpageconfig.featuredArticles8">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="postOption.id === frontpageconfig.featuredArticles8?.id ? frontpageconfig.featuredArticles8 : postOption" *ngFor="let postOption of featuredarticles8s; trackBy: trackPostById">{{postOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.featuredArticles9" for="field_featuredArticles9">Featured Articles 9</label>
+            <select class="form-control" id="field_featuredArticles9" name="featuredArticles9" [(ngModel)]="frontpageconfig.featuredArticles9">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="postOption.id === frontpageconfig.featuredArticles9?.id ? frontpageconfig.featuredArticles9 : postOption" *ngFor="let postOption of featuredarticles9s; trackBy: trackPostById">{{postOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.featuredArticles10" for="field_featuredArticles10">Featured Articles 10</label>
+            <select class="form-control" id="field_featuredArticles10" name="featuredArticles10" [(ngModel)]="frontpageconfig.featuredArticles10">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="postOption.id === frontpageconfig.featuredArticles10?.id ? frontpageconfig.featuredArticles10 : postOption" *ngFor="let postOption of featuredarticles10s; trackBy: trackPostById">{{postOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.popularNews1" for="field_popularNews1">Popular News 1</label>
+            <select class="form-control" id="field_popularNews1" name="popularNews1" [(ngModel)]="frontpageconfig.popularNews1">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="postOption.id === frontpageconfig.popularNews1?.id ? frontpageconfig.popularNews1 : postOption" *ngFor="let postOption of popularnews1s; trackBy: trackPostById">{{postOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.popularNews2" for="field_popularNews2">Popular News 2</label>
+            <select class="form-control" id="field_popularNews2" name="popularNews2" [(ngModel)]="frontpageconfig.popularNews2">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="postOption.id === frontpageconfig.popularNews2?.id ? frontpageconfig.popularNews2 : postOption" *ngFor="let postOption of popularnews2s; trackBy: trackPostById">{{postOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.popularNews3" for="field_popularNews3">Popular News 3</label>
+            <select class="form-control" id="field_popularNews3" name="popularNews3" [(ngModel)]="frontpageconfig.popularNews3">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="postOption.id === frontpageconfig.popularNews3?.id ? frontpageconfig.popularNews3 : postOption" *ngFor="let postOption of popularnews3s; trackBy: trackPostById">{{postOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.popularNews4" for="field_popularNews4">Popular News 4</label>
+            <select class="form-control" id="field_popularNews4" name="popularNews4" [(ngModel)]="frontpageconfig.popularNews4">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="postOption.id === frontpageconfig.popularNews4?.id ? frontpageconfig.popularNews4 : postOption" *ngFor="let postOption of popularnews4s; trackBy: trackPostById">{{postOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.popularNews5" for="field_popularNews5">Popular News 5</label>
+            <select class="form-control" id="field_popularNews5" name="popularNews5" [(ngModel)]="frontpageconfig.popularNews5">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="postOption.id === frontpageconfig.popularNews5?.id ? frontpageconfig.popularNews5 : postOption" *ngFor="let postOption of popularnews5s; trackBy: trackPostById">{{postOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.popularNews6" for="field_popularNews6">Popular News 6</label>
+            <select class="form-control" id="field_popularNews6" name="popularNews6" [(ngModel)]="frontpageconfig.popularNews6">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="postOption.id === frontpageconfig.popularNews6?.id ? frontpageconfig.popularNews6 : postOption" *ngFor="let postOption of popularnews6s; trackBy: trackPostById">{{postOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.popularNews7" for="field_popularNews7">Popular News 7</label>
+            <select class="form-control" id="field_popularNews7" name="popularNews7" [(ngModel)]="frontpageconfig.popularNews7">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="postOption.id === frontpageconfig.popularNews7?.id ? frontpageconfig.popularNews7 : postOption" *ngFor="let postOption of popularnews7s; trackBy: trackPostById">{{postOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.popularNews8" for="field_popularNews8">Popular News 8</label>
+            <select class="form-control" id="field_popularNews8" name="popularNews8" [(ngModel)]="frontpageconfig.popularNews8">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="postOption.id === frontpageconfig.popularNews8?.id ? frontpageconfig.popularNews8 : postOption" *ngFor="let postOption of popularnews8s; trackBy: trackPostById">{{postOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.weeklyNews1" for="field_weeklyNews1">Weekly News 1</label>
+            <select class="form-control" id="field_weeklyNews1" name="weeklyNews1" [(ngModel)]="frontpageconfig.weeklyNews1">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="postOption.id === frontpageconfig.weeklyNews1?.id ? frontpageconfig.weeklyNews1 : postOption" *ngFor="let postOption of weeklynews1s; trackBy: trackPostById">{{postOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.weeklyNews2" for="field_weeklyNews2">Weekly News 2</label>
+            <select class="form-control" id="field_weeklyNews2" name="weeklyNews2" [(ngModel)]="frontpageconfig.weeklyNews2">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="postOption.id === frontpageconfig.weeklyNews2?.id ? frontpageconfig.weeklyNews2 : postOption" *ngFor="let postOption of weeklynews2s; trackBy: trackPostById">{{postOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.weeklyNews3" for="field_weeklyNews3">Weekly News 3</label>
+            <select class="form-control" id="field_weeklyNews3" name="weeklyNews3" [(ngModel)]="frontpageconfig.weeklyNews3">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="postOption.id === frontpageconfig.weeklyNews3?.id ? frontpageconfig.weeklyNews3 : postOption" *ngFor="let postOption of weeklynews3s; trackBy: trackPostById">{{postOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.weeklyNews4" for="field_weeklyNews4">Weekly News 4</label>
+            <select class="form-control" id="field_weeklyNews4" name="weeklyNews4" [(ngModel)]="frontpageconfig.weeklyNews4">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="postOption.id === frontpageconfig.weeklyNews4?.id ? frontpageconfig.weeklyNews4 : postOption" *ngFor="let postOption of weeklynews4s; trackBy: trackPostById">{{postOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.newsFeeds1" for="field_newsFeeds1">News Feeds 1</label>
+            <select class="form-control" id="field_newsFeeds1" name="newsFeeds1" [(ngModel)]="frontpageconfig.newsFeeds1">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="postOption.id === frontpageconfig.newsFeeds1?.id ? frontpageconfig.newsFeeds1 : postOption" *ngFor="let postOption of newsfeeds1s; trackBy: trackPostById">{{postOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.newsFeeds2" for="field_newsFeeds2">News Feeds 2</label>
+            <select class="form-control" id="field_newsFeeds2" name="newsFeeds2" [(ngModel)]="frontpageconfig.newsFeeds2">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="postOption.id === frontpageconfig.newsFeeds2?.id ? frontpageconfig.newsFeeds2 : postOption" *ngFor="let postOption of newsfeeds2s; trackBy: trackPostById">{{postOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.newsFeeds3" for="field_newsFeeds3">News Feeds 3</label>
+            <select class="form-control" id="field_newsFeeds3" name="newsFeeds3" [(ngModel)]="frontpageconfig.newsFeeds3">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="postOption.id === frontpageconfig.newsFeeds3?.id ? frontpageconfig.newsFeeds3 : postOption" *ngFor="let postOption of newsfeeds3s; trackBy: trackPostById">{{postOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.newsFeeds4" for="field_newsFeeds4">News Feeds 4</label>
+            <select class="form-control" id="field_newsFeeds4" name="newsFeeds4" [(ngModel)]="frontpageconfig.newsFeeds4">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="postOption.id === frontpageconfig.newsFeeds4?.id ? frontpageconfig.newsFeeds4 : postOption" *ngFor="let postOption of newsfeeds4s; trackBy: trackPostById">{{postOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.newsFeeds5" for="field_newsFeeds5">News Feeds 5</label>
+            <select class="form-control" id="field_newsFeeds5" name="newsFeeds5" [(ngModel)]="frontpageconfig.newsFeeds5">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="postOption.id === frontpageconfig.newsFeeds5?.id ? frontpageconfig.newsFeeds5 : postOption" *ngFor="let postOption of newsfeeds5s; trackBy: trackPostById">{{postOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.newsFeeds6" for="field_newsFeeds6">News Feeds 6</label>
+            <select class="form-control" id="field_newsFeeds6" name="newsFeeds6" [(ngModel)]="frontpageconfig.newsFeeds6">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="postOption.id === frontpageconfig.newsFeeds6?.id ? frontpageconfig.newsFeeds6 : postOption" *ngFor="let postOption of newsfeeds6s; trackBy: trackPostById">{{postOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.usefulLinks1" for="field_usefulLinks1">Useful Links 1</label>
+            <select class="form-control" id="field_usefulLinks1" name="usefulLinks1" [(ngModel)]="frontpageconfig.usefulLinks1">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="urllinkOption.id === frontpageconfig.usefulLinks1?.id ? frontpageconfig.usefulLinks1 : urllinkOption" *ngFor="let urllinkOption of usefullinks1s; trackBy: trackUrllinkById">{{urllinkOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.usefulLinks2" for="field_usefulLinks2">Useful Links 2</label>
+            <select class="form-control" id="field_usefulLinks2" name="usefulLinks2" [(ngModel)]="frontpageconfig.usefulLinks2">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="urllinkOption.id === frontpageconfig.usefulLinks2?.id ? frontpageconfig.usefulLinks2 : urllinkOption" *ngFor="let urllinkOption of usefullinks2s; trackBy: trackUrllinkById">{{urllinkOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.usefulLinks3" for="field_usefulLinks3">Useful Links 3</label>
+            <select class="form-control" id="field_usefulLinks3" name="usefulLinks3" [(ngModel)]="frontpageconfig.usefulLinks3">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="urllinkOption.id === frontpageconfig.usefulLinks3?.id ? frontpageconfig.usefulLinks3 : urllinkOption" *ngFor="let urllinkOption of usefullinks3s; trackBy: trackUrllinkById">{{urllinkOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.usefulLinks4" for="field_usefulLinks4">Useful Links 4</label>
+            <select class="form-control" id="field_usefulLinks4" name="usefulLinks4" [(ngModel)]="frontpageconfig.usefulLinks4">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="urllinkOption.id === frontpageconfig.usefulLinks4?.id ? frontpageconfig.usefulLinks4 : urllinkOption" *ngFor="let urllinkOption of usefullinks4s; trackBy: trackUrllinkById">{{urllinkOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.usefulLinks5" for="field_usefulLinks5">Useful Links 5</label>
+            <select class="form-control" id="field_usefulLinks5" name="usefulLinks5" [(ngModel)]="frontpageconfig.usefulLinks5">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="urllinkOption.id === frontpageconfig.usefulLinks5?.id ? frontpageconfig.usefulLinks5 : urllinkOption" *ngFor="let urllinkOption of usefullinks5s; trackBy: trackUrllinkById">{{urllinkOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.usefulLinks6" for="field_usefulLinks6">Useful Links 6</label>
+            <select class="form-control" id="field_usefulLinks6" name="usefulLinks6" [(ngModel)]="frontpageconfig.usefulLinks6">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="urllinkOption.id === frontpageconfig.usefulLinks6?.id ? frontpageconfig.usefulLinks6 : urllinkOption" *ngFor="let urllinkOption of usefullinks6s; trackBy: trackUrllinkById">{{urllinkOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.recentVideos1" for="field_recentVideos1">Recent Videos 1</label>
+            <select class="form-control" id="field_recentVideos1" name="recentVideos1" [(ngModel)]="frontpageconfig.recentVideos1">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="urllinkOption.id === frontpageconfig.recentVideos1?.id ? frontpageconfig.recentVideos1 : urllinkOption" *ngFor="let urllinkOption of recentvideos1s; trackBy: trackUrllinkById">{{urllinkOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.recentVideos2" for="field_recentVideos2">Recent Videos 2</label>
+            <select class="form-control" id="field_recentVideos2" name="recentVideos2" [(ngModel)]="frontpageconfig.recentVideos2">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="urllinkOption.id === frontpageconfig.recentVideos2?.id ? frontpageconfig.recentVideos2 : urllinkOption" *ngFor="let urllinkOption of recentvideos2s; trackBy: trackUrllinkById">{{urllinkOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.recentVideos3" for="field_recentVideos3">Recent Videos 3</label>
+            <select class="form-control" id="field_recentVideos3" name="recentVideos3" [(ngModel)]="frontpageconfig.recentVideos3">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="urllinkOption.id === frontpageconfig.recentVideos3?.id ? frontpageconfig.recentVideos3 : urllinkOption" *ngFor="let urllinkOption of recentvideos3s; trackBy: trackUrllinkById">{{urllinkOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.recentVideos4" for="field_recentVideos4">Recent Videos 4</label>
+            <select class="form-control" id="field_recentVideos4" name="recentVideos4" [(ngModel)]="frontpageconfig.recentVideos4">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="urllinkOption.id === frontpageconfig.recentVideos4?.id ? frontpageconfig.recentVideos4 : urllinkOption" *ngFor="let urllinkOption of recentvideos4s; trackBy: trackUrllinkById">{{urllinkOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.recentVideos5" for="field_recentVideos5">Recent Videos 5</label>
+            <select class="form-control" id="field_recentVideos5" name="recentVideos5" [(ngModel)]="frontpageconfig.recentVideos5">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="urllinkOption.id === frontpageconfig.recentVideos5?.id ? frontpageconfig.recentVideos5 : urllinkOption" *ngFor="let urllinkOption of recentvideos5s; trackBy: trackUrllinkById">{{urllinkOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.frontpageconfig.recentVideos6" for="field_recentVideos6">Recent Videos 6</label>
+            <select class="form-control" id="field_recentVideos6" name="recentVideos6" [(ngModel)]="frontpageconfig.recentVideos6">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="urllinkOption.id === frontpageconfig.recentVideos6?.id ? frontpageconfig.recentVideos6 : urllinkOption" *ngFor="let urllinkOption of recentvideos6s; trackBy: trackUrllinkById">{{urllinkOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

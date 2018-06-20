@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="now()" dbms="mysql"/>
+    <property name="autoIncrement" value="true"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity Frontpageconfig.
+    -->
+    <changeSet id="20180620105256-1" author="jhipster">
+        <createTable tableName="frontpageconfig">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="creation_date" type="timestamp">
+                <constraints nullable="false" />
+            </column>
+            <column name="top_news1_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="top_news2_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="top_news3_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="top_news4_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="top_news5_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="latest_news1_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="latest_news2_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="latest_news3_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="latest_news4_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="latest_news5_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="breaking_news1_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="recent_posts1_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="recent_posts2_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="recent_posts3_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="recent_posts4_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="featured_articles1_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="featured_articles2_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="featured_articles3_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="featured_articles4_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="featured_articles5_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="featured_articles6_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="featured_articles7_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="featured_articles8_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="featured_articles9_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="featured_articles10_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="popular_news1_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="popular_news2_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="popular_news3_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="popular_news4_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="popular_news5_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="popular_news6_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="popular_news7_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="popular_news8_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="weekly_news1_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="weekly_news2_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="weekly_news3_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="weekly_news4_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="news_feeds1_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="news_feeds2_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="news_feeds3_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="news_feeds4_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="news_feeds5_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="news_feeds6_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="useful_links1_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="useful_links2_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="useful_links3_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="useful_links4_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="useful_links5_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="useful_links6_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="recent_videos1_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="recent_videos2_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="recent_videos3_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="recent_videos4_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="recent_videos5_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="recent_videos6_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        <dropDefaultValue tableName="frontpageconfig" columnName="creation_date" columnDataType="datetime"/>
+        
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+</databaseChangeLog>

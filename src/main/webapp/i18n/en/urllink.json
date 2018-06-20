@@ -1,0 +1,36 @@
+
+{
+    "skeletonApp": {
+        "urllink" : {
+            "home": {
+                "title": "Urllinks",
+                "createLabel": "Create a new Urllink",
+                "createOrEditLabel": "Create or edit a Urllink",
+                "search": "Search for Urllink"
+            },
+            "created": "A new Urllink is created with identifier {{ param }}",
+            "updated": "A Urllink is updated with identifier {{ param }}",
+            "deleted": "A Urllink is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Urllink {{ id }}?"
+            },
+            "detail": {
+                "title": "Urllink"
+            },
+            "linkText": "Link Text",
+            "linkURL": "Link URL",
+            "usefulLinks1": "Useful Links 1",
+            "usefulLinks2": "Useful Links 2",
+            "usefulLinks3": "Useful Links 3",
+            "usefulLinks4": "Useful Links 4",
+            "usefulLinks5": "Useful Links 5",
+            "usefulLinks6": "Useful Links 6",
+            "recentVideos1": "Recent Videos 1",
+            "recentVideos2": "Recent Videos 2",
+            "recentVideos3": "Recent Videos 3",
+            "recentVideos4": "Recent Videos 4",
+            "recentVideos5": "Recent Videos 5",
+            "recentVideos6": "Recent Videos 6"
+        }
+    }
+}

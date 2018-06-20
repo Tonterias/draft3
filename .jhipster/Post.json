@@ -1,0 +1,410 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "comment",
+            "otherEntityName": "comment",
+            "otherEntityRelationshipName": "post"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "topNews1",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "topNews1"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "topNews2",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "topNews2"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "topNews3",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "topNews3"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "topNews4",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "topNews4"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "topNews5",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "topNews5"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "latestNews1",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "latestNews1"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "latestNews2",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "latestNews2"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "latestNews3",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "latestNews3"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "latestNews4",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "latestNews4"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "latestNews5",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "latestNews5"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "breakingNews1",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "breakingNews1"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "recentPosts1",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "recentPosts1"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "recentPosts2",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "recentPosts2"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "recentPosts3",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "recentPosts3"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "recentPosts4",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "recentPosts4"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "featuredArticles1",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "featuredArticles1"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "featuredArticles2",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "featuredArticles2"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "featuredArticles3",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "featuredArticles3"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "featuredArticles4",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "featuredArticles4"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "featuredArticles5",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "featuredArticles5"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "featuredArticles6",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "featuredArticles6"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "featuredArticles7",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "featuredArticles7"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "featuredArticles8",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "featuredArticles8"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "featuredArticles9",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "featuredArticles9"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "featuredArticles10",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "featuredArticles10"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "popularNews1",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "popularNews1"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "popularNews2",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "popularNews2"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "popularNews3",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "popularNews3"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "popularNews4",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "popularNews4"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "popularNews5",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "popularNews5"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "popularNews6",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "popularNews6"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "popularNews7",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "popularNews7"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "popularNews8",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "popularNews8"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "weeklyNews1",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "weeklyNews1"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "weeklyNews2",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "weeklyNews2"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "weeklyNews3",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "weeklyNews3"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "weeklyNews4",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "weeklyNews4"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "newsFeeds1",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "newsFeeds1"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "newsFeeds2",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "newsFeeds2"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "newsFeeds3",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "newsFeeds3"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "newsFeeds4",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "newsFeeds4"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "newsFeeds5",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "newsFeeds5"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "newsFeeds6",
+            "otherEntityName": "frontpageconfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "newsFeeds6"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "blog",
+            "otherEntityName": "blog",
+            "otherEntityField": "title"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "relationshipName": "tag",
+            "otherEntityName": "tag",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "post"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "relationshipName": "topic",
+            "otherEntityName": "topic",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "post"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "creationDate",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "publicationDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "headline",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength",
+                "required"
+            ],
+            "fieldValidateRulesMinlength": 2,
+            "fieldValidateRulesMaxlength": 100
+        },
+        {
+            "fieldName": "lead",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 2,
+            "fieldValidateRulesMaxlength": 1000
+        },
+        {
+            "fieldName": "bodytext",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text",
+            "fieldValidateRules": [
+                "minbytes",
+                "maxbytes",
+                "required"
+            ],
+            "fieldValidateRulesMinbytes": 3,
+            "fieldValidateRulesMaxbytes": 50000
+        },
+        {
+            "fieldName": "quote",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 2,
+            "fieldValidateRulesMaxlength": 1000
+        },
+        {
+            "fieldName": "conclusion",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 2,
+            "fieldValidateRulesMaxlength": 2000
+        },
+        {
+            "fieldName": "image",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        }
+    ],
+    "changelogDate": "20180620105254",
+    "entityTableName": "post",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

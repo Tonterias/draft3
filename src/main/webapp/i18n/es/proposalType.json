@@ -1,0 +1,11 @@
+{
+    "skeletonApp": {
+        "ProposalType" : {
+            "null": "",
+            "UNDER_STUDY": "UNDER_STUDY",
+            "APPROVED": "APPROVED",
+            "DEVELOPMENT": "DEVELOPMENT",
+            "PRODUCTION": "PRODUCTION"
+        }
+    }
+}

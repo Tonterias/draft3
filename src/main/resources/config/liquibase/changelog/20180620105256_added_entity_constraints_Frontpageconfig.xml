@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Frontpageconfig.
+    -->
+    <changeSet id="20180620105256-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="top_news1_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_top_news1_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="post"/>
+
+        <addForeignKeyConstraint baseColumnNames="top_news2_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_top_news2_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="post"/>
+
+        <addForeignKeyConstraint baseColumnNames="top_news3_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_top_news3_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="post"/>
+
+        <addForeignKeyConstraint baseColumnNames="top_news4_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_top_news4_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="post"/>
+
+        <addForeignKeyConstraint baseColumnNames="top_news5_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_top_news5_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="post"/>
+
+        <addForeignKeyConstraint baseColumnNames="latest_news1_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_latest_news1_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="post"/>
+
+        <addForeignKeyConstraint baseColumnNames="latest_news2_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_latest_news2_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="post"/>
+
+        <addForeignKeyConstraint baseColumnNames="latest_news3_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_latest_news3_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="post"/>
+
+        <addForeignKeyConstraint baseColumnNames="latest_news4_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_latest_news4_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="post"/>
+
+        <addForeignKeyConstraint baseColumnNames="latest_news5_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_latest_news5_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="post"/>
+
+        <addForeignKeyConstraint baseColumnNames="breaking_news1_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_breaking_news1_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="post"/>
+
+        <addForeignKeyConstraint baseColumnNames="recent_posts1_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_recent_posts1_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="post"/>
+
+        <addForeignKeyConstraint baseColumnNames="recent_posts2_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_recent_posts2_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="post"/>
+
+        <addForeignKeyConstraint baseColumnNames="recent_posts3_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_recent_posts3_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="post"/>
+
+        <addForeignKeyConstraint baseColumnNames="recent_posts4_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_recent_posts4_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="post"/>
+
+        <addForeignKeyConstraint baseColumnNames="featured_articles1_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_featured_articles1_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="post"/>
+
+        <addForeignKeyConstraint baseColumnNames="featured_articles2_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_featured_articles2_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="post"/>
+
+        <addForeignKeyConstraint baseColumnNames="featured_articles3_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_featured_articles3_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="post"/>
+
+        <addForeignKeyConstraint baseColumnNames="featured_articles4_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_featured_articles4_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="post"/>
+
+        <addForeignKeyConstraint baseColumnNames="featured_articles5_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_featured_articles5_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="post"/>
+
+        <addForeignKeyConstraint baseColumnNames="featured_articles6_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_featured_articles6_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="post"/>
+
+        <addForeignKeyConstraint baseColumnNames="featured_articles7_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_featured_articles7_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="post"/>
+
+        <addForeignKeyConstraint baseColumnNames="featured_articles8_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_featured_articles8_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="post"/>
+
+        <addForeignKeyConstraint baseColumnNames="featured_articles9_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_featured_articles9_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="post"/>
+
+        <addForeignKeyConstraint baseColumnNames="featured_articles10_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_featured_articles10_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="post"/>
+
+        <addForeignKeyConstraint baseColumnNames="popular_news1_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_popular_news1_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="post"/>
+
+        <addForeignKeyConstraint baseColumnNames="popular_news2_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_popular_news2_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="post"/>
+
+        <addForeignKeyConstraint baseColumnNames="popular_news3_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_popular_news3_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="post"/>
+
+        <addForeignKeyConstraint baseColumnNames="popular_news4_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_popular_news4_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="post"/>
+
+        <addForeignKeyConstraint baseColumnNames="popular_news5_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_popular_news5_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="post"/>
+
+        <addForeignKeyConstraint baseColumnNames="popular_news6_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_popular_news6_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="post"/>
+
+        <addForeignKeyConstraint baseColumnNames="popular_news7_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_popular_news7_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="post"/>
+
+        <addForeignKeyConstraint baseColumnNames="popular_news8_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_popular_news8_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="post"/>
+
+        <addForeignKeyConstraint baseColumnNames="weekly_news1_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_weekly_news1_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="post"/>
+
+        <addForeignKeyConstraint baseColumnNames="weekly_news2_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_weekly_news2_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="post"/>
+
+        <addForeignKeyConstraint baseColumnNames="weekly_news3_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_weekly_news3_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="post"/>
+
+        <addForeignKeyConstraint baseColumnNames="weekly_news4_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_weekly_news4_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="post"/>
+
+        <addForeignKeyConstraint baseColumnNames="news_feeds1_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_news_feeds1_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="post"/>
+
+        <addForeignKeyConstraint baseColumnNames="news_feeds2_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_news_feeds2_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="post"/>
+
+        <addForeignKeyConstraint baseColumnNames="news_feeds3_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_news_feeds3_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="post"/>
+
+        <addForeignKeyConstraint baseColumnNames="news_feeds4_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_news_feeds4_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="post"/>
+
+        <addForeignKeyConstraint baseColumnNames="news_feeds5_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_news_feeds5_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="post"/>
+
+        <addForeignKeyConstraint baseColumnNames="news_feeds6_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_news_feeds6_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="post"/>
+
+        <addForeignKeyConstraint baseColumnNames="useful_links1_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_useful_links1_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="urllink"/>
+
+        <addForeignKeyConstraint baseColumnNames="useful_links2_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_useful_links2_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="urllink"/>
+
+        <addForeignKeyConstraint baseColumnNames="useful_links3_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_useful_links3_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="urllink"/>
+
+        <addForeignKeyConstraint baseColumnNames="useful_links4_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_useful_links4_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="urllink"/>
+
+        <addForeignKeyConstraint baseColumnNames="useful_links5_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_useful_links5_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="urllink"/>
+
+        <addForeignKeyConstraint baseColumnNames="useful_links6_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_useful_links6_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="urllink"/>
+
+        <addForeignKeyConstraint baseColumnNames="recent_videos1_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_recent_videos1_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="urllink"/>
+
+        <addForeignKeyConstraint baseColumnNames="recent_videos2_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_recent_videos2_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="urllink"/>
+
+        <addForeignKeyConstraint baseColumnNames="recent_videos3_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_recent_videos3_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="urllink"/>
+
+        <addForeignKeyConstraint baseColumnNames="recent_videos4_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_recent_videos4_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="urllink"/>
+
+        <addForeignKeyConstraint baseColumnNames="recent_videos5_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_recent_videos5_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="urllink"/>
+
+        <addForeignKeyConstraint baseColumnNames="recent_videos6_id"
+                                 baseTableName="frontpageconfig"
+                                 constraintName="fk_frontpageconfig_recent_videos6_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="urllink"/>
+
+    </changeSet>
+</databaseChangeLog>

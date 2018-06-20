@@ -1,0 +1,45 @@
+
+<div *ngIf="blog">
+    <h2><span jhiTranslate="skeletonApp.blog.detail.title">Blog</span> {{blog.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="skeletonApp.blog.creationDate">Creation Date</span></dt>
+        <dd>
+            <span>{{blog.creationDate | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.blog.title">Title</span></dt>
+        <dd>
+            <span>{{blog.title}}</span>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.blog.image">Image</span></dt>
+        <dd>
+            <div *ngIf="blog.image">
+                <a (click)="openFile(blog.imageContentType, blog.image)">
+                    <img [src]="'data:' + blog.imageContentType + ';base64,' + blog.image" style="max-width: 100%;" alt="blog image"/>
+                </a>
+                {{blog.imageContentType}}, {{byteSize(blog.image)}}
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.blog.party">Party</span></dt>
+        <dd>
+            <div *ngIf="blog.party">
+                <a [routerLink]="['/party', blog.party?.id]">{{blog.party?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'blog/'+ blog.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

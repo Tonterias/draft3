@@ -1,0 +1,46 @@
+
+<div *ngIf="comment">
+    <h2><span jhiTranslate="skeletonApp.comment.detail.title">Comment</span> {{comment.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="skeletonApp.comment.creationDate">Creation Date</span></dt>
+        <dd>
+            <span>{{comment.creationDate | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.comment.commentText">Comment Text</span></dt>
+        <dd>
+            <span>{{comment.commentText}}</span>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.comment.isOffensive">Is Offensive</span></dt>
+        <dd>
+            <span>{{comment.isOffensive}}</span>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.comment.post">Post</span></dt>
+        <dd>
+            <div *ngIf="comment.post">
+                <a [routerLink]="['/post', comment.post?.id]">{{comment.post?.headline}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.comment.party">Party</span></dt>
+        <dd>
+            <div *ngIf="comment.party">
+                <a [routerLink]="['/party', comment.party?.id]">{{comment.party?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'comment/'+ comment.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

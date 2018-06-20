@@ -1,0 +1,41 @@
+
+<div *ngIf="photo">
+    <h2><span jhiTranslate="skeletonApp.photo.detail.title">Photo</span> {{photo.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="skeletonApp.photo.creationDate">Creation Date</span></dt>
+        <dd>
+            <span>{{photo.creationDate | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.photo.image">Image</span></dt>
+        <dd>
+            <div *ngIf="photo.image">
+                <a (click)="openFile(photo.imageContentType, photo.image)">
+                    <img [src]="'data:' + photo.imageContentType + ';base64,' + photo.image" style="max-width: 100%;" alt="photo image"/>
+                </a>
+                {{photo.imageContentType}}, {{byteSize(photo.image)}}
+            </div>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.photo.album">Album</span></dt>
+        <dd>
+            <div *ngIf="photo.album">
+                <a [routerLink]="['/album', photo.album?.id]">{{photo.album?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'photo/'+ photo.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

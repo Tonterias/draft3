@@ -1,0 +1,96 @@
+<div>
+    <h2>
+        <span jhiTranslate="skeletonApp.post.home.title">Posts</span>
+        <button class="btn btn-primary float-right jh-create-entity create-post" [routerLink]="['/', { outlets: { popup: ['post-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span class="hidden-sm-down"  jhiTranslate="skeletonApp.post.home.createLabel">
+            Create new Post
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'skeletonApp.post.home.search' | translate }}">
+                    <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+                        <span class="fa fa-search"></span>
+                    </button>
+                    <button class="input-group-append btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <span class="fa fa-trash-o"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="posts">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="reset.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="creationDate"><span jhiTranslate="skeletonApp.post.creationDate">Creation Date</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="publicationDate"><span jhiTranslate="skeletonApp.post.publicationDate">Publication Date</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="headline"><span jhiTranslate="skeletonApp.post.headline">Headline</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="lead"><span jhiTranslate="skeletonApp.post.lead">Lead</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="bodytext"><span jhiTranslate="skeletonApp.post.bodytext">Bodytext</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="quote"><span jhiTranslate="skeletonApp.post.quote">Quote</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="conclusion"><span jhiTranslate="skeletonApp.post.conclusion">Conclusion</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="image"><span jhiTranslate="skeletonApp.post.image">Image</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="blog.title"><span jhiTranslate="skeletonApp.post.blog">Blog</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+            <tr *ngFor="let post of posts ;trackBy: trackId">
+                <td><a [routerLink]="['../post', post.id ]">{{post.id}}</a></td>
+                <td>{{post.creationDate | date:'medium'}}</td>
+                <td>{{post.publicationDate | date:'medium'}}</td>
+                <td>{{post.headline}}</td>
+                <td>{{post.lead}}</td>
+                <td>{{post.bodytext}}</td>
+                <td>{{post.quote}}</td>
+                <td>{{post.conclusion}}</td>
+                <td>
+                    <a *ngIf="post.image" (click)="openFile(post.imageContentType, post.image)">
+                        <img [src]="'data:' + post.imageContentType + ';base64,' + post.image" style="max-height: 30px;" alt="post image"/>
+                    </a>
+                    <span *ngIf="post.image">{{post.imageContentType}}, {{byteSize(post.image)}}</span>
+                </td>
+                <td>
+                    <div *ngIf="post.blog">
+                        <a [routerLink]="['../blog', post.blog?.id ]" >{{post.blog?.title}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../post', post.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'post/'+ post.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'post/'+ post.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

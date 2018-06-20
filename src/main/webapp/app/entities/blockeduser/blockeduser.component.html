@@ -1,0 +1,83 @@
+<div>
+    <h2>
+        <span jhiTranslate="skeletonApp.blockeduser.home.title">Blockedusers</span>
+        <button class="btn btn-primary float-right jh-create-entity create-blockeduser" [routerLink]="['/', { outlets: { popup: ['blockeduser-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span class="hidden-sm-down"  jhiTranslate="skeletonApp.blockeduser.home.createLabel">
+            Create new Blockeduser
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'skeletonApp.blockeduser.home.search' | translate }}">
+                    <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+                        <span class="fa fa-search"></span>
+                    </button>
+                    <button class="input-group-append btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <span class="fa fa-trash-o"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="blockedusers">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="reset.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="creationDate"><span jhiTranslate="skeletonApp.blockeduser.creationDate">Creation Date</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="blockinguser.id"><span jhiTranslate="skeletonApp.blockeduser.blockinguser">Blockinguser</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="blockeduser.id"><span jhiTranslate="skeletonApp.blockeduser.blockeduser">Blockeduser</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+            <tr *ngFor="let blockeduser of blockedusers ;trackBy: trackId">
+                <td><a [routerLink]="['../blockeduser', blockeduser.id ]">{{blockeduser.id}}</a></td>
+                <td>{{blockeduser.creationDate | date:'medium'}}</td>
+                <td>
+                    <div *ngIf="blockeduser.blockinguser">
+                        <a [routerLink]="['../party', blockeduser.blockinguser?.id ]" >{{blockeduser.blockinguser?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="blockeduser.blockeduser">
+                        <a [routerLink]="['../party', blockeduser.blockeduser?.id ]" >{{blockeduser.blockeduser?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../blockeduser', blockeduser.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'blockeduser/'+ blockeduser.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'blockeduser/'+ blockeduser.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

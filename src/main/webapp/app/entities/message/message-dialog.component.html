@@ -1,0 +1,79 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myMessageLabel" jhiTranslate="skeletonApp.message.home.createOrEditLabel">Create or edit a Message</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!message.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="message.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.message.creationDate" for="field_creationDate">Creation Date</label>
+            <div class="d-flex">
+                <input id="field_creationDate" type="datetime-local" class="form-control" name="creationDate" [(ngModel)]="message.creationDate"
+                required/>
+            </div>
+            <div [hidden]="!(editForm.controls.creationDate?.dirty && editForm.controls.creationDate?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.creationDate?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.creationDate?.errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.message.messageText" for="field_messageText">Message Text</label>
+            <textarea class="form-control" name="messageText" id="field_messageText"
+                [(ngModel)]="message.messageText" required minbytes="3" maxbytes="7500"></textarea>
+            <div [hidden]="!(editForm.controls.messageText?.dirty && editForm.controls.messageText?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.messageText?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.messageText?.errors?.minbytes" jhiTranslate="entity.validation.minbytes" translateValues="{ min: 3 }">
+                    This field should be at least 3.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.messageText?.errors?.maxbytes" jhiTranslate="entity.validation.maxbytes" translateValues="{ max: 7500 }">
+                    This field cannot be more than 7500.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.message.isDeliverd" for="field_isDeliverd">Is Deliverd</label>
+            <input type="checkbox" class="form-control" name="isDeliverd" id="field_isDeliverd"
+                [(ngModel)]="message.isDeliverd" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="skeletonApp.message.party" for="field_party">Party</label>
+            <select class="form-control" id="field_party" name="party" [(ngModel)]="message.party"  required>
+                <option *ngIf="!editForm.value.party" [ngValue]="null" selected></option>
+                <option [ngValue]="partyOption.id === message.party?.id ? message.party : partyOption" *ngFor="let partyOption of parties; trackBy: trackPartyById">{{partyOption.id}}</option>
+            </select>
+        </div>
+        <div [hidden]="!(editForm.controls.party?.dirty && editForm.controls.party?.invalid)">
+            <small class="form-text text-danger"
+                [hidden]="!editForm.controls.party?.errors?.required" jhiTranslate="entity.validation.required">
+                This field is required.
+            </small>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

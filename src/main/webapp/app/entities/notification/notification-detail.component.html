@@ -1,0 +1,46 @@
+
+<div *ngIf="notification">
+    <h2><span jhiTranslate="skeletonApp.notification.detail.title">Notification</span> {{notification.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="skeletonApp.notification.creationDate">Creation Date</span></dt>
+        <dd>
+            <span>{{notification.creationDate | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.notification.notificationDate">Notification Date</span></dt>
+        <dd>
+            <span>{{notification.notificationDate | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.notification.notificationReason">Notification Reason</span></dt>
+        <dd>
+            <span jhiTranslate="{{'skeletonApp.NotificationReason.' + notification.notificationReason}}">{{notification.notificationReason}}</span>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.notification.notificationText">Notification Text</span></dt>
+        <dd>
+            <span>{{notification.notificationText}}</span>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.notification.isDeliverd">Is Deliverd</span></dt>
+        <dd>
+            <span>{{notification.isDeliverd}}</span>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.notification.user">User</span></dt>
+        <dd>
+            {{notification.user?.id}}
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'notification/'+ notification.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

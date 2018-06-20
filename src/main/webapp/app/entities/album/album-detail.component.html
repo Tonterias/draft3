@@ -1,0 +1,36 @@
+
+<div *ngIf="album">
+    <h2><span jhiTranslate="skeletonApp.album.detail.title">Album</span> {{album.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="skeletonApp.album.creationDate">Creation Date</span></dt>
+        <dd>
+            <span>{{album.creationDate | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.album.title">Title</span></dt>
+        <dd>
+            <span>{{album.title}}</span>
+        </dd>
+        <dt><span jhiTranslate="skeletonApp.album.party">Party</span></dt>
+        <dd>
+            <div *ngIf="album.party">
+                <a [routerLink]="['/party', album.party?.id]">{{album.party?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'album/'+ album.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>
