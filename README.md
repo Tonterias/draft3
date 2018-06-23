@@ -4,7 +4,7 @@
 ![alternate sssss text](https://github.com/Tonterias/draft3/blob/master/ReadMe/homepage.png)
 ![Contribution guidelines for this project](ReadMe/homepage.png)
 
-[Contribution guidelines for this project](docs/CONTRIBUTING.md)
+[EL testo que queda marcado para llevarte al punto](ReadMe/Solution1.md)
 
 I would like to make an App that helps me and others to learn Jhipster and, at the same time, that becomes an interesting project that can grow over time with different parts. This should be a collaborative project that should be interesting for other developers to join, at any point (by mailing me at raroraroraro@gmail.com), either because you want to learn about how we have done it (beginners) or propose new ideas to make it grow and excel (experienced). Moreover, you can download the App and create your own Website if you wish to do so. 
 
